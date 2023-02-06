@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+section {
+  width: 1000px;
+  margin: 100px auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+section .pragh {
+  width: 400px;
+  height: 280px;
+  margin: 0 auto 150px;
+}
+section .pragh img {
+  width: 0;
+  height: 100%;
+}
+img.show-animate {
+  width: 100% !important;
+  clip-path: inset(0 100% 0 0);
+  animation: clip 0.4s forwards cubic-bezier(0, 0.3, 0.6, 1);
+}
+@keyframes clip {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+  }
+}

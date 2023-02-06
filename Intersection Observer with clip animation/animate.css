@@ -1,0 +1,151 @@
+.nav-slidein-3 {
+  animation: slidein-3 1s forwards ease-out;
+}
+
+/* show animation one by one */
+.showup {
+  animation: showup 0.4s forwards ease-out;
+}
+@keyframes showup {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 20px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* fade animation after item showup */
+.fadein {
+  animation: fadein 0.4s 0.2s forwards ease-out;
+}
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* clip animation during item showup 不需要 */
+/* .showedclip{
+    clip: rect(0,1260px,2000px,0);
+  } */
+
+.showclip {
+  /* animation: showclip 0.8s forwards ease-in-out; */
+  animation: showclip 0.8s forwards cubic-bezier(0.54, 0.04, 0, 1.03);
+}
+
+@keyframes showclip {
+  0% {
+    clip: rect(0, 0, 2000px, 0);
+  }
+  100% {
+    clip: rect(0, 1260px, 2000px, 0);
+  }
+}
+
+/* 测试 clip-path 动画 */
+.clip-path-animate {
+  clip-path: inset(0 100% 0 0);
+  animation: clip 0.4s forwards cubic-bezier(0, 0.3, 0.6, 1);
+}
+@keyframes clip {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+/* mosaic effect */
+@keyframes mosaic {
+  0% {
+    opacity: 0;
+  }
+  33.33% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.mosaic {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 10000;
+  pointer-events: none;
+}
+.mosaic-inner {
+  max-width: 1260px;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  box-sizing: border-box;
+}
+.mosaic-animated .mosaic {
+  display: block;
+}
+.mosaic i {
+  opacity: 1;
+  background-color: #fff;
+  animation: mosaic 0.3s steps(1, start) both;
+}
+.debugger-mosaic .mosaic {
+  display: block;
+  opacity: 0.5;
+}
+.debugger-mosaic .mosaic i {
+  background-color: red;
+}
+.mosaic-animated i:nth-child(1) {
+}
+.mosaic-animated i:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.mosaic-animated i:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.mosaic-animated i:nth-child(4) {
+  animation-delay: 0.3s;
+}
+/* 3 cols 等比缩放 */
+@media screen and (min-width: 1025px) and (max-width: 1260px) {
+  .mosaic i {
+    width: 33.33333%;
+    padding-top: 33.3333%;
+  }
+}
+@media screen and (max-width: 1300px) {
+  .mosaic-inner {
+    padding: 0 20px;
+  }
+}
+/* 2 cols 等比缩放 */
+@media screen and (min-width: 440px) and (max-width: 1024px) {
+  .mosaic i {
+    width: 50%;
+    padding-top: 50%;
+  }
+}
+@media screen and (max-width: 440px) {
+  .mosaic i {
+    width: 100%;
+    padding-top: 100%;
+  }
+
+  .mod_site_nav {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}

@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+section {
+  width: 800px;
+  height: 500px;
+  margin: 0 auto;
+}
+section .pragh {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+section .pragh img[data-src] {
+  filter: blur(0.2em);
+}
+section .pragh img {
+  filter: blur(0em);
+  transition: filter 0.5s;
+}
