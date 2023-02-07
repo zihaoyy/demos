@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div id="masonry"></div>
+    <script src="./data.js"></script>
+    <script>
+      let data1 = [], //第一列
+        data2 = [], //第二列
+        data3 = [], //第三列
+        i = 0;
+
+      while (i < json.length) {
+        data1.push(json[i++]);
+        if (i < json.length) {
+          data2.push(json[i++]);
+        }
+        if (i < json.length) {
+          data3.push(json[i++]);
+        }
+      }
+      let datas = [data1, data2, data3];
+      let html = "";
+      for (let i = 0; i < datas.length; i++) {
+        html += "<div class='colmun'>";
+        for (let j = 0; j < datas[i].length; j++) {
+          html += `<img class='item' src="${datas[i][j].img}" />`;
+        }
+        html += "</div>";
+      }
+      document.querySelector("#masonry").innerHTML = html;
+    </script>
+  </body>
+</html>
