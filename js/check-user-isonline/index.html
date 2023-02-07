@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <div class='status'>
+      <div class='offline-msg'>
+        你的网络断开了 😢
+      </div>
+      <div class='online-msg'>
+        你已经连上网络 🔗
+      </div>
+    </div>
+    <script>
+      const status1 = document.querySelector(".status");
+      //load 监听网页加载事件
+      window.addEventListener("load", () => {
+        const handleNetworkChange = () => {
+          if (navigator.onLine) {
+            //给status下的offline-msg和online-msg添加类名样式
+            status1.classList.remove("offline");
+          } else {
+            //给status下的offline-msg和online-msg添加类名样式
+            status1.classList.add("offline");
+          }
+        };
+        // online该事件在浏览器开始在线工作时触发
+        window.addEventListener("online", handleNetworkChange);
+        // offline该事件在浏览器开始离线工作时触发。
+        window.addEventListener("offline", handleNetworkChange);
+      });
+    </script>
+  </body>
+</html>

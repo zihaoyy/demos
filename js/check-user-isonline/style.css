@@ -1,0 +1,33 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+.status {
+  background: #efefef;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.offline .online-msg {
+  display: none;
+}
+.offline .offline-msg {
+  display: block;
+}
+div {
+  padding: 1rem 2rem;
+  font-size: 3rem;
+  border-radius: 1rem;
+  color: white;
+  font-family: Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+.online-msg {
+  background: green;
+  display: block;
+}
+.offline-msg {
+  background: red;
+  display: none;
+}
